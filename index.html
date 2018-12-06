@@ -1,7 +1,42 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    
+  </head>
   <body>
-    <div></div>
-    <div></div>
+   <header></header>
+   <section class="section-one">
+     <article class="range">
+       <h3>Set Range</h3>
+          <label for="set-min">Min Range</label>
+          <input type="number" id="set-min" class="js-set-min">
+          <label for="set-max">Max Range</label>
+          <input type="number" id="set-max" class="js-set-max">
+          <button>Update</button>
+     </article>
+     <article class="guess">
+      <p class="display-range">The Current Range is - to -</p>
+      <h3>Challenger 1</h3>
+        <label for="name-challenger-one">Name</label>
+        <input type="text" id="name-challenger-one" class="js-name-challenger-one">
+        <label for="guess-challenger-one">Guess</label>
+        <input type="number" id="guess-challenger-one" class="js-guess-challenger-one">
+      <h3>Challenger 2</h3>
+        <label for="name-challenger-two">Name</label>
+        <input type="text" id="name-challenger-two" class="js-name-challenger-two">
+        <label for="guess-challenger-two">Guess</label>
+        <input type="number" id="guess-challenger-two" class="js-guess-challenger-two">
+      <button class="submit">Submit</button>
+      <button class="reset-game">Reset Game</button>
+      <button class="clear-game">Clear Game</button>
+     </article>
+     <article class="score">
+       <h3>Latest Score</h3>
+     </article>
+   </section>
+   <section class="section-two">
+     <article class="card"></article>
+     <article class="card"></article>
+   </section>
   </body>
 </html>
