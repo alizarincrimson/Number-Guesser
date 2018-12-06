@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-   <header></header>
+   <header>
+     <h1>Number Guesser</h1>
+     <h2>Ultimate Challenge Edition</h2>
+   </header>
    <section class="section-one">
      <article class="range">
        <h3>Set Range</h3>
@@ -32,10 +35,26 @@
      </article>
      <article class="score">
        <h3>Latest Score</h3>
+       <div class="score-challenger-one">
+        <p class="js-name-challenger-one">Challenger 1 Name</p>
+        <p>current guess</p>
+        <p class="js-guess-challenger-one">0</p>
+        <p class="js-result-challenger-one">that's too high</p>
+       </div>
+       <div class="score-challenger-two">
+        <p class="js-name-challenger-two">Challenger 2 Name</p>
+        <p>current guess</p>
+        <p class="js-guess-challenger-two">0</p>
+        <p class="js-result-challenger-two">that's too low</p>
+       </div>
      </article>
    </section>
    <section class="section-two">
-     <article class="card"></article>
+     <article class="card">
+       <div class="versus"></div>
+       <div class="winner"></div>
+       <div class="stats"></div>
+     </article>
      <article class="card"></article>
    </section>
   </body>
