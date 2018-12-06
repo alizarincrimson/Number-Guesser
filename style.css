@@ -1,13 +1,28 @@
 body {
   background-color: lightgrey;
+  margin: 0;
+  padding: 0;
 }
 
 header {
   border: solid grey 2px;
+  margin: 0;
+}
+
+main {
+  display: flex;
+}
+
+section {
+  margin: 0;
+}
+
+form {
+  border: solid black 1px;
 }
 
 article {
-  border: solid black 1px;
+  border: dotted black 1px;
 }
 
 .score-challenger-one, .score-challenger-two {
@@ -15,6 +30,12 @@ article {
   display: inline-block;
   }
 
-section {
-  display: inline-block;
+ul {
+  padding: 0;
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+  justify-content: space-around;
 }
