@@ -4,18 +4,17 @@ var rangeBtn = document.querySelector("#update-range-button");
 
 rangeBtn.addEventListener('click', function(event) {
   event.preventDefault();
-  min = document.querySelector("#js-set-min").value;
-  max = document.querySelector("#js-set-max").value;
-  function randomNum(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-    console.log(min, max);
-  }
-
+  min = parseInt(document.querySelector("#js-set-min").value);
+  max = parseInt(document.querySelector("#js-set-max").value);
   console.log(min, max);
   document.querySelector(".display-range").innerText = `The Current Range is ${min} to ${max}`;
-})
+  function generateRandomNumber(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+  console.log(generateRandomNumber(min, max));
+})  
 
 var chalOne = undefined;
 var chalTwo = undefined;
@@ -31,7 +30,3 @@ guessBtn.addEventListener('click', function(event) {
 })
 
 var resetBtn = document.querySelector("#reset-btn");
-
-// resetBtn.addEventListener('click', function(event) {
-//   event.preventDefault();
-// });
