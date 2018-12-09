@@ -31,21 +31,21 @@
         <label for="js-guess-challenger-two">Guess</label>
         <input type="number" id="js-guess-challenger-two">
       <button id="submit-btn">Submit</button>
-      <button id="reset-btn">Reset Game</button>
-      <button id="clear-btn">Clear Game</button>
+      <button id="reset-btn" class="no-click">Reset Game</button>
+      <button id="clear-btn" class="no-click">Clear Game</button>
      </form>
      <article class="score">
        <h3>Latest Score</h3>
-       <div class="score-challenger-one">
-        <p class="js-name-challenger-one">Challenger 1 Name</p>
+       <div class="score">
+        <p id="js-name-update-one">Challenger 1 Name</p>
         <p>current guess</p>
-        <p class="js-guess-challenger-one">0</p>
+        <p id="js-guess-update-one">0</p>
         <p class="js-result-challenger-one">that's too high</p>
        </div>
-       <div class="score-challenger-two">
-        <p class="js-name-challenger-two">Challenger 2 Name</p>
+       <div class="score">
+        <p id="js-name-update-two">Challenger 2 Name</p>
         <p>current guess</p>
-        <p class="js-guess-challenger-two">0</p>
+        <p id="js-guess-update-two">0</p>
         <p class="js-result-challenger-two">that's too low</p>
        </div>
      </article>

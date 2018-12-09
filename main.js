@@ -1,6 +1,16 @@
 var min = 0;
 var max = 100;
+
 var rangeBtn = document.querySelector("#update-range-button");
+var guessBtn = document.querySelector("#submit-btn");
+var clearBtn = document.querySelector("#clear-btn");
+var resetBtn = document.querySelector("#reset-btn");
+
+var chalOne = undefined;
+var chalTwo = undefined;
+var guessOne = undefined;
+var guessTwo = undefined;
+
 
 rangeBtn.addEventListener('click', function(event) {
   event.preventDefault();
@@ -14,11 +24,7 @@ rangeBtn.addEventListener('click', function(event) {
     return Math.floor(Math.random() * (max - min) + min);
   }
   console.log(generateRandomNumber(min, max));
-})  
-
-var chalOne = undefined;
-var chalTwo = undefined;
-var guessBtn = document.querySelector("#submit-btn");
+}) 
 
 guessBtn.addEventListener('click', function(event) {
   event.preventDefault();
@@ -27,17 +33,20 @@ guessBtn.addEventListener('click', function(event) {
   guessOne = document.querySelector("#js-guess-challenger-one").value;
   guessTwo = document.querySelector("#js-guess-challenger-two").value;
   console.log(chalOne, chalTwo, guessOne, guessTwo);
+  removeClass();
+  document.querySelector("#js-name-update-one").innerText = chalOne;
+  document.querySelector("#js-name-update-two").innerText = chalTwo;
+  document.querySelector("#js-guess-update-one").innerText = guessOne;
+  document.querySelector("#js-guess-update-two").innerText = guessTwo;
+  feedback();
 })
-
-var clearBtn = document.querySelector("#clear-btn");
 
 clearBtn.addEventListener('click', function(event) {
   event.preventDefault();
   document.querySelector("#js-guess-challenger-one").value = null;
   document.querySelector("#js-guess-challenger-two").value = null;
+  addClass();
 })
-
-var resetBtn = document.querySelector("#reset-btn");
 
 resetBtn.addEventListener('click', function(event) {
   event.preventDefault();
@@ -47,11 +56,26 @@ resetBtn.addEventListener('click', function(event) {
   document.querySelector("#js-name-challenger-two").value = null;
   document.querySelector("#js-guess-challenger-one").value = null;
   document.querySelector("#js-guess-challenger-two").value = null;
+  document.querySelector(".display-range").innerText = `-`;
+  addClass();
 })
 
-// not working yet
-function disableClear() {
-  if (document.getElementById("js-name-challenger-one").value==="") {
-    document.getElementById("clear-btn").disabled = true;
+function removeClass() {
+  document.getElementById("reset-btn").classList.remove("no-click");
+  document.getElementById("clear-btn").classList.remove("no-click");
+} 
+
+function addClass() {
+  document.getElementById("reset-btn").classList.add("no-click")
+}
+
+function feedback() {
+  if (guessOne > generateRandomNumber) {
+    console.log("That's too high");
+  }
+  if (guessOne < generateRandomNumber) {
+    console.log("That's too low");
+  } else {
+    console.log("BOOM");
   }
 }

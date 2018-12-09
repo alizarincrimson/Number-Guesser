@@ -25,7 +25,15 @@ article {
   border: dotted black 1px;
 }
 
-.score-challenger-one, .score-challenger-two {
+button.no-click {
+  pointer-events: none;
+}
+
+button.yes-click {
+  pointer-events: all;
+}
+
+.score {
   border: solid black 1px;
   display: inline-block;
   }
