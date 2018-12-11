@@ -13,6 +13,10 @@ var chalTwo = document.querySelector("#js-name-challenger-two").value;
 var guessOne = document.querySelector("#js-guess-challenger-one").value;
 var guessTwo = document.querySelector("#js-guess-challenger-two").value;
 
+var chalOneFeedback = document.querySelector("#js-chal-one-feedback").value;
+var chalTwoFeedback = document.querySelector("#js-chal-one-feedback").value;
+
+
 var randomNumber = generateRandomNumber(initialMin, initialMax);
 
 clearBtn.disabled = true;
@@ -96,7 +100,8 @@ submitBtn.addEventListener('click', function(event) {
   document.querySelector("#js-name-update-two").innerText = chalTwo;
   document.querySelector("#js-guess-update-one").innerText = guessOne;
   document.querySelector("#js-guess-update-two").innerText = guessTwo;
-  feedback();
+  feedbackOne();
+  feedbackTwo();
 })
 
 clearBtn.addEventListener('click', function(event) {
@@ -135,13 +140,32 @@ function generateRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function feedback() {
-  if (guessOne > generateRandomNumber) {
-    console.log("That's too high");
-  }
-  if (guessOne < generateRandomNumber) {
-    console.log("That's too low");
+function disableButton(button) {
+  button.disabled = true;
+} 
+
+function enableButton(button) {
+  button.disabled = false;
+}
+
+// Added this
+function feedbackOne() {
+  if (guessOne > randomNumber) {
+    document.querySelector("#js-chal-one-feedback").innerText = "That's too high!";
+  } else if (guessOne < randomNumber) {
+    document.querySelector("#js-chal-one-feedback").innerText = "That's too low!";
   } else {
-    console.log("BOOM");
+    document.querySelector("#js-chal-one-feedback").innerText = "BOOM";
+
+  }
+}
+
+function feedbackTwo() {
+  if (guessTwo > randomNumber) {
+    document.querySelector("#js-chal-two-feedback").innerText = "That's too high!";
+  } else if (guessTwo < randomNumber) {
+    document.querySelector("#js-chal-two-feedback").innerText = "That's too low!";
+  } else {
+    document.querySelector("#js-chal-two-feedback").innerText = "BOOM";
   }
 }
