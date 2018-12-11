@@ -25,12 +25,16 @@ article {
   border: dotted black 1px;
 }
 
-button.no-click {
+/*button.no-click {
   pointer-events: none;
 }
 
 button.yes-click {
   pointer-events: all;
+}*/
+
+button:disabled {
+  background-color: pink;
 }
 
 .score {
