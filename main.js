@@ -7,12 +7,16 @@ var submitBtn = document.querySelector("#submit-btn");
 var clearBtn = document.querySelector("#clear-btn");
 var resetBtn = document.querySelector("#reset-btn");
 
-var chalOne; 
-var chalTwo;
-var guessOne;
-var guessTwo;
+
+var chalOne = document.querySelector("#js-name-challenger-one").value;
+var chalTwo = document.querySelector("#js-name-challenger-two").value;
+var guessOne = document.querySelector("#js-guess-challenger-one").value;
+var guessTwo = document.querySelector("#js-guess-challenger-two").value;
 
 var randomNumber = generateRandomNumber(initialMin, initialMax);
+
+clearBtn.disabled = true;
+resetBtn.disabled = true;
 
 updateBtn.addEventListener('click', function(event) {
   event.preventDefault();
@@ -24,13 +28,61 @@ updateBtn.addEventListener('click', function(event) {
   console.log(randomNumber);
 }) 
 
-document.querySelector("#js-name-challenger-one").addEventListener('keyup', function() {
-  if (document.querySelector("#js-name-challenger-one").value !== "") {
-    enableButton(submitBtn);
+// This section enables/disables Reset button
+
+function disableButton() {
+  event.preventDefault();
+  if (chalOne.value === "" && chaltwo.value === "" && guessOne.value === "" && guessTwo.value === "") {
+    clearBtn.disabled = true;
+    resetBtn.disabled = true;
   } else {
-    disableButton(submitBtn);
+    clearBtn.disabled = false;
+    resetBtn.disabled = false;
+  }
+}
+
+// function enableButton(button) {
+//   button.disabled = false;
+// }
+
+document.querySelector("#js-name-challenger-one").addEventListener('keyup', function() {
+  if (chalOne.value === "" && chaltwo) {
+    enableButton(resetBtn);
+  } else {
+    disableButton(resetBtn);
   }
 })
+
+
+
+
+// document.querySelector("#js-name-challenger-two").addEventListener('keyup', function() {
+//   if (document.querySelector("#js-name-challenger-two").value !== "") {
+//     enableButton(resetBtn);
+//   } else {
+//     disableButton(resetBtn);
+//   }
+// })
+
+// document.querySelector("#js-guess-challenger-one").addEventListener('keyup', function() {
+//   if (document.querySelector("#js-guess-challenger-one").value !== "") {
+//     enableButton(resetBtn);
+//   } else {
+//     disableButton(resetBtn);
+//   }
+// })
+
+// document.querySelector("#js-guess-challenger-two").addEventListener('keyup', function() {
+//   if (document.querySelector("#js-guess-challenger-two").value !== "") {
+//     enableButton(resetBtn);
+//   } else {
+//     disableButton(resetBtn);
+//   }
+// })
+
+
+
+// End of Reset Button states
 
 submitBtn.addEventListener('click', function(event) {
   event.preventDefault();
@@ -81,14 +133,6 @@ function generateRandomNumber(min, max) {
   // min = Math.ceil(min);
   // max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min);
-}
-
-function disableButton(button) {
-  button.disabled = true;
-} 
-
-function enableButton(button) {
-  button.disabled = false;
 }
 
 function feedback() {
