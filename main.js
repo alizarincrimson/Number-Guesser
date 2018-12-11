@@ -7,15 +7,13 @@ var submitBtn = document.querySelector("#submit-btn");
 var clearBtn = document.querySelector("#clear-btn");
 var resetBtn = document.querySelector("#reset-btn");
 
-
 var chalOne = document.querySelector("#js-name-challenger-one").value;
 var chalTwo = document.querySelector("#js-name-challenger-two").value;
 var guessOne = document.querySelector("#js-guess-challenger-one").value;
 var guessTwo = document.querySelector("#js-guess-challenger-two").value;
 
 var chalOneFeedback = document.querySelector("#js-chal-one-feedback").value;
-var chalTwoFeedback = document.querySelector("#js-chal-one-feedback").value;
-
+var chalTwoFeedback = document.querySelector("#js-chal-two-feedback").value;
 
 var randomNumber = generateRandomNumber(initialMin, initialMax);
 
@@ -49,16 +47,13 @@ function disableButton() {
 //   button.disabled = false;
 // }
 
-document.querySelector("#js-name-challenger-one").addEventListener('keyup', function() {
-  if (chalOne.value === "" && chaltwo) {
-    enableButton(resetBtn);
-  } else {
-    disableButton(resetBtn);
-  }
-})
-
-
-
+// document.querySelector("#js-name-challenger-one").addEventListener('keyup', function() {
+//   if (chalOne.value === "" && chaltwo) {
+//     enableButton(resetBtn);
+//   } else {
+//     disableButton(resetBtn);
+//   }
+// })
 
 // document.querySelector("#js-name-challenger-two").addEventListener('keyup', function() {
 //   if (document.querySelector("#js-name-challenger-two").value !== "") {
@@ -168,4 +163,24 @@ function feedbackTwo() {
   } else {
     document.querySelector("#js-chal-two-feedback").innerText = "BOOM";
   }
+}
+
+
+// Generate winner card
+
+
+function addCard() {
+  var card = <article class="card">
+       <ul class="versus">
+          <li>chalOne.value</li>
+          <li> vs </li>
+          <li>chalTwo.value</li>
+      </ul>
+      <div class="winner">Winner</div>
+      <ul class="stats">
+        <li>guesses</li>
+        <li>minutes</li>
+        <li>icon</li>
+      </ul>
+     </article>
 }
