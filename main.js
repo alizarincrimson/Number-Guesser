@@ -12,6 +12,10 @@ var chalTwo;
 var guessOne;
 var guessTwo;
 
+var chalOneFeedback = document.querySelector("#js-chal-one-feedback").value;
+var chalTwoFeedback = document.querySelector("#js-chal-one-feedback").value;
+
+
 var randomNumber = generateRandomNumber(initialMin, initialMax);
 
 updateBtn.addEventListener('click', function(event) {
@@ -44,7 +48,8 @@ submitBtn.addEventListener('click', function(event) {
   document.querySelector("#js-name-update-two").innerText = chalTwo;
   document.querySelector("#js-guess-update-one").innerText = guessOne;
   document.querySelector("#js-guess-update-two").innerText = guessTwo;
-  feedback();
+  feedbackOne();
+  feedbackTwo();
 })
 
 clearBtn.addEventListener('click', function(event) {
@@ -91,13 +96,23 @@ function enableButton(button) {
   button.disabled = false;
 }
 
-function feedback() {
-  if (guessOne > generateRandomNumber) {
-    console.log("That's too high");
-  }
-  if (guessOne < generateRandomNumber) {
-    console.log("That's too low");
+// Added this
+function feedbackOne() {
+  if (guessOne > randomNumber) {
+    document.querySelector("#js-chal-one-feedback").innerText = "That's too high!";
+  } else if (guessOne < randomNumber) {
+    document.querySelector("#js-chal-one-feedback").innerText = "That's too low!";
   } else {
-    console.log("BOOM");
+    document.querySelector("#js-chal-one-feedback").innerText = "BOOM";
+  }
+}
+
+function feedbackTwo() {
+  if (guessTwo > randomNumber) {
+    document.querySelector("#js-chal-two-feedback").innerText = "That's too high!";
+  } else if (guessTwo < randomNumber) {
+    document.querySelector("#js-chal-two-feedback").innerText = "That's too low!";
+  } else {
+    document.querySelector("#js-chal-two-feedback").innerText = "BOOM";
   }
 }
