@@ -17,19 +17,22 @@
           <label for="js-set-max">Max Range</label>
           <input type="number" id="js-set-max">
           <button id="update-button">Update</button>
+          <p id="js-range-error"></p>
      </form>
      <form class="guess">
       <p class="display-range">-</p>
       <h3>Challenger 1</h3>
         <label for="js-name-challenger-one">Name</label>
-        <input type="text" id="js-name-challenger-one">
+        <input type="text" id="js-name-challenger-one" pattern="[A-Za-z]">
         <label for="js-guess-challenger-one">Guess</label>
         <input type="number" id="js-guess-challenger-one">
+        <p id="js-guess-error-one"></p>
       <h3>Challenger 2</h3>
         <label for="js-name-challenger-two">Name</label>
         <input type="text" id="js-name-challenger-two">
         <label for="js-guess-challenger-two">Guess</label>
         <input type="number" id="js-guess-challenger-two">
+        <p id="js-guess-error-two"></p>
       <button id="submit-btn">Submit</button>
       <button id="reset-btn" disabled>Reset Game</button>
       <button id="clear-btn" disabled>Clear Game</button>
