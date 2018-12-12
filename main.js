@@ -7,10 +7,10 @@ var submitBtn = document.querySelector("#submit-btn");
 var clearBtn = document.querySelector("#clear-btn");
 var resetBtn = document.querySelector("#reset-btn");
 
-var chalOne = document.querySelector("#js-name-challenger-one").value;
-var chalTwo = document.querySelector("#js-name-challenger-two").value;
-var guessOne = document.querySelector("#js-guess-challenger-one").value;
-var guessTwo = document.querySelector("#js-guess-challenger-two").value;
+var chalOne = document.querySelector("#js-name-challenger-one");
+var chalTwo = document.querySelector("#js-name-challenger-two");
+var guessOne = document.querySelector("#js-guess-challenger-one");
+var guessTwo = document.querySelector("#js-guess-challenger-two");
 
 var chalOneFeedback = document.querySelector("#js-chal-one-feedback").value;
 var chalTwoFeedback = document.querySelector("#js-chal-two-feedback").value;
@@ -30,11 +30,12 @@ updateBtn.addEventListener('click', function(event) {
   console.log(randomNumber);
 }) 
 
-// This section enables/disables Reset button
+// Disable and enable button state
 
-function disableButton() {
+function disableOrEnableButton() {
   event.preventDefault();
-  if (chalOne.value === "" && chaltwo.value === "" && guessOne.value === "" && guessTwo.value === "") {
+  if (!chalOne.value && !chalTwo.value && !guessOne.value && !guessTwo.value) {
+    console.log("hello");
     clearBtn.disabled = true;
     resetBtn.disabled = true;
   } else {
@@ -47,13 +48,23 @@ function disableButton() {
 //   button.disabled = false;
 // }
 
-// document.querySelector("#js-name-challenger-one").addEventListener('keyup', function() {
-//   if (chalOne.value === "" && chaltwo) {
-//     enableButton(resetBtn);
-//   } else {
-//     disableButton(resetBtn);
-//   }
-// })
+// Keystroke events input fields
+
+chalOne.addEventListener('keyup', function() {
+  disableOrEnableButton();
+})
+
+chalTwo.addEventListener('keyup', function() {
+  disableOrEnableButton();
+})
+
+guessOne.addEventListener('keyup', function() {
+  disableOrEnableButton();
+})
+
+guessTwo.addEventListener('keyup', function() {
+  disableOrEnableButton();
+})
 
 // document.querySelector("#js-name-challenger-two").addEventListener('keyup', function() {
 //   if (document.querySelector("#js-name-challenger-two").value !== "") {
@@ -80,8 +91,7 @@ function disableButton() {
 // })
 
 
-
-// End of Reset Button states
+// Button functions and states
 
 submitBtn.addEventListener('click', function(event) {
   event.preventDefault();
@@ -97,13 +107,14 @@ submitBtn.addEventListener('click', function(event) {
   document.querySelector("#js-guess-update-two").innerText = guessTwo;
   feedbackOne();
   feedbackTwo();
+  disableOrEnableButton();
 })
 
 clearBtn.addEventListener('click', function(event) {
   event.preventDefault();
   document.querySelector("#js-guess-challenger-one").value = null;
   document.querySelector("#js-guess-challenger-two").value = null;
-  // addClass();
+  disableOrEnableButton();
 })
 
 resetBtn.addEventListener('click', function(event) {
@@ -115,7 +126,10 @@ resetBtn.addEventListener('click', function(event) {
   document.querySelector("#js-name-challenger-two").value = null;
   document.querySelector("#js-guess-challenger-one").value = null;
   document.querySelector("#js-guess-challenger-two").value = null;
+  disableOrEnableButton();
 });
+
+// End of Button functions and states
 
 function refresh() {
   randomNumber = generateRandomNumber(min, max);
@@ -125,6 +139,7 @@ function refresh() {
 
 window.onload = function () {
   randomNumber = generateRandomNumber(min, max);
+  disableOrEnableButton();
   document.querySelector(".display-range").innerText = `The Current Range is ${min} to ${max}.`;
   console.log(randomNumber);
 }
@@ -135,13 +150,13 @@ function generateRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function disableButton(button) {
-  button.disabled = true;
-} 
+// function disableButton(button) {
+//   button.disabled = true;
+// } 
 
-function enableButton(button) {
-  button.disabled = false;
-}
+// function enableButton(button) {
+//   button.disabled = false;
+// }
 
 // Added this
 function feedbackOne() {
@@ -167,20 +182,21 @@ function feedbackTwo() {
 
 
 // Generate winner card
+// // // innerHTML ???
 
 
-function addCard() {
-  var card = <article class="card">
-       <ul class="versus">
-          <li>chalOne.value</li>
-          <li> vs </li>
-          <li>chalTwo.value</li>
-      </ul>
-      <div class="winner">Winner</div>
-      <ul class="stats">
-        <li>guesses</li>
-        <li>minutes</li>
-        <li>icon</li>
-      </ul>
-     </article>
-}
+// // function addCard() {
+// //   var card = <article class="card">
+// //        <ul class="versus">
+// //           <li>chalOne.value</li>
+// //           <li> vs </li>
+// //           <li>chalTwo.value</li>
+// //       </ul>
+// //       <div class="winner">Winner</div>
+// //       <ul class="stats">
+// //         <li>guesses</li>
+// //         <li>minutes</li>
+// //         <li>icon</li>
+// //       </ul>
+//      </article>
+// }
