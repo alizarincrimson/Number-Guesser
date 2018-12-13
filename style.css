@@ -1,12 +1,70 @@
 body {
   background-color: lightgrey;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 header {
   border: solid grey 2px;
+  background-color: #404041;
+  color: #dd1972;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
   margin: 0;
+}
+
+h2 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+h3 {
+  color: #404041;
+  margin: 10;
+}
+
+.label-field {
+  display: inline-block;
+}
+
+.update-range {
+/*  display: flex;
+  justify-content: space-around;*/
+  display: inline;
+}
+
+label {
+  color: 404041;
+}
+
+button:enabled {
+  background-color: #6e6e6e;
+  color: white;
+  font-size: .8rem;
+  text-transform: uppercase;
+}
+
+button:disabled {
+  background-color: #D0D2D3;
+  color: white;
+  font-size: .8rem;
+  text-transform: uppercase;
+}
+
+.flexbuttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.score {
+  text-align: center;
+}
+
+.light {
+  font-weight: 300;
 }
 
 main {
@@ -19,10 +77,12 @@ section {
 
 form {
   border: solid black 1px;
+  background-color: #fff;
 }
 
 article {
   border: dotted black 1px;
+  background-color: #fff;
 }
 
 /*button.no-click {
@@ -32,10 +92,6 @@ article {
 button.yes-click {
   pointer-events: all;
 }*/
-
-button:disabled {
-  background-color: pink;
-}
 
 .score {
   border: solid black 1px;

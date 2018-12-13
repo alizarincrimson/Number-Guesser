@@ -2,42 +2,66 @@
 <html>
   <head>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
   </head>
   <body>
    <header>
-     <h1>Number Guesser</h1>
+     <h1>Number<span class="light">Guesser</span>
      <h2>Ultimate Challenge Edition</h2>
    </header>
    <main>
+   
    <section class="section-one">
+     
      <form class="range">
        <h3>Set Range</h3>
-          <label for="js-set-min">Min Range</label>
+        <div class="update-range">
+        <div class="label-field">          
+          <label for="js-set-min">Min Range</label><br>
           <input type="number" id="js-set-min">
-          <label for="js-set-max">Max Range</label>
+        </div>
+        </div>
+          <div class="update-range">
+            <div class="label-field">
+          <label for="js-set-max">Max Range</label><br>
           <input type="number" id="js-set-max">
+        </div>
+        </div>
+        <div class="update-range">
           <button id="update-button">Update</button>
           <p id="js-range-error"></p>
+        </div>
      </form>
+     
      <form class="guess">
       <p class="display-range">-</p>
       <h3>Challenger 1</h3>
-        <label for="js-name-challenger-one">Name</label>
+        <div class="label-field">
+          <label for="js-name-challenger-one">Name</label><br>
         <input type="text" id="js-name-challenger-one" pattern="[A-Za-z]">
-        <label for="js-guess-challenger-one">Guess</label>
+      </div>
+      <div class="label-field">
+        <label for="js-guess-challenger-one">Guess</label><br>
         <input type="number" id="js-guess-challenger-one">
+        </div>
         <p id="js-guess-error-one"></p>
+
       <h3>Challenger 2</h3>
-        <label for="js-name-challenger-two">Name</label>
+      <div class="label-field">
+        <label for="js-name-challenger-two">Name</label><br>
         <input type="text" id="js-name-challenger-two">
-        <label for="js-guess-challenger-two">Guess</label>
+      </div>
+      <div class="label-field">
+        <label for="js-guess-challenger-two">Guess</label><br>
         <input type="number" id="js-guess-challenger-two">
+      </div>
         <p id="js-guess-error-two"></p>
-      <button id="submit-btn">Submit</button>
+      <div class="flexbuttons"><button id="submit-btn">Submit</button>
       <button id="reset-btn" disabled>Reset Game</button>
       <button id="clear-btn" disabled>Clear Game</button>
+    </div>
      </form>
-     <article class="score">
+     <article class="latest-score">
        <h3>Latest Score</h3>
        <div class="score">
         <p id="js-name-update-one">Challenger 1 Name</p>
