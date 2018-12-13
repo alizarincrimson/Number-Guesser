@@ -20,7 +20,7 @@ header {
 }
 
 h1 {
-  margin-bottom: .5rem;
+  margin-bottom: .1rem;
 }
 
 h2 {
@@ -49,17 +49,20 @@ h2:after {
 
 h3 {
   color: #404041;
-  margin-top: 0rem;
+  font-size: 1.5rem;
+  margin: .3rem .1rem .4rem .0rem;
 }
 
 .label-field {
   display: inline-block;
   width: 30%;
+  font-size: 1.1rem;
   /*justify-content: space-between;*/
 }
 
 .update-range {
   display: inline;
+  max-width: 
 }
 
 label {
@@ -73,19 +76,21 @@ input {
 button:enabled {
   background-color: #6e6e6e;
   color: white;
-  font-size: .8rem;
+  font-size: 1rem;
   text-transform: uppercase;
   width: 80%;
-  border-radius: 25px;
+  padding: .4rem;
+  border-radius: 22px;
 }
 
 button:disabled {
   background-color: #D0D2D3;
   color: white;
-  font-size: .8rem;
+  font-size: 1rem;
   text-transform: uppercase;
   width: 80%;
-  border-radius: 25px;
+  padding: .4rem;
+  border-radius: 22px;
 }
 
 .flexbuttons {
@@ -137,6 +142,7 @@ article {
   background-color: #fff;
   padding: 1rem 0rem 1rem 1rem;
   margin: 1rem;
+  border: solid #D0D2D3 2px;
 }
 
 .score {
@@ -145,16 +151,36 @@ article {
   padding: 0rem;
   margin: 0rem 1rem 0rem 1rem;
   text-align: center;
-}
+/*  border-left: solid #d0d2d3 1px;
+*/}
 
 .scorecard-name {
   font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0rem .5rem;
+}
+
+.current-guess {
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0rem .5rem;
 }
 
 .pink-guess {
   color: #DD1972;
-  font-size: 3rem;
+  font-size: 5.5rem;
+  font-style: bold;
   font-weight: 700;
+  padding: 0;
+  margin: -0.5rem 1rem 0rem 1rem;
+}
+
+#js-chal-one-feedback,
+#js-chal-two-feedback {
+  font-size: 1.3rem;
+  padding: 0;
+  margin: 0rem 1rem;
 }
 
 ul {
