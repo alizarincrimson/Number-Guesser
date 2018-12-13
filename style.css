@@ -93,6 +93,16 @@ button:disabled {
   border-radius: 22px;
 }
 
+button:hover {
+  background-color: #DD1972;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  width: 80%;
+  padding: .4rem;
+  border-radius: 22px;
+}
+
 .flexbuttons {
   display: flex;
   justify-content: space-between;
