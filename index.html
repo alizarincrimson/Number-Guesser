@@ -38,7 +38,7 @@
       <h3>Challenger 1</h3>
         <div class="label-field">
           <label for="js-name-challenger-one">Name</label><br>
-        <input type="text" id="js-name-challenger-one" pattern="[A-Za-z]">
+        <input type="text" id="js-name-challenger-one" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
       </div>
       <div class="label-field">
         <label for="js-guess-challenger-one">Guess</label><br>
