@@ -209,9 +209,9 @@ function generateRandomNumber(min, max) {
 
 function feedbackOne() {
   if (guessOne > randomNumber) {
-    document.querySelector("#js-chal-one-feedback").innerText = "That's too high!";
+    document.querySelector("#js-chal-one-feedback").innerText = "that's too high!";
   } else if (guessOne < randomNumber) {
-    document.querySelector("#js-chal-one-feedback").innerText = "That's too low!";
+    document.querySelector("#js-chal-one-feedback").innerText = "that's too low!";
   } else {
     document.querySelector("#js-chal-one-feedback").innerText = "BOOM";
     winnerOne();
@@ -220,11 +220,11 @@ function feedbackOne() {
 
 function feedbackTwo() {
   if (guessTwo > randomNumber) {
-    document.querySelector("#js-chal-two-feedback").innerText = "That's too high!";
+    document.querySelector("#js-chal-two-feedback").innerText = "that's too high!";
   } else if (guessTwo < randomNumber) {
-    document.querySelector("#js-chal-two-feedback").innerText = "That's too low!";
+    document.querySelector("#js-chal-two-feedback").innerText = "that's too low!";
   } else {
-    document.querySelector("#js-chal-two-feedback").innerText = "BOOM";
+    document.querySelector("#js-chal-two-feedback").innerText = "BOOM!";
     winnerTwo();
   }
 }
