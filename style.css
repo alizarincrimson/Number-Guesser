@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: lightgrey;
   font-family: 'Open Sans', sans-serif;
@@ -15,10 +19,32 @@ header {
   margin: 0;
 }
 
+h1 {
+  margin-bottom: .5rem;
+}
+
 h2 {
   color: #fff;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  margin: 0;
+  display: flex;
+  background: transparent;
+}
+
+h2:before, 
+h2:after {
+  color: white;
+  content:'';
+  flex: 1;
+  border-bottom: solid 1px;
+  margin: auto 0.25em; 
+}
+
+#header-text {
+  height: 200px;
+  width: 560px;
+  margin: 0 auto;
 }
 
 h3 {
@@ -28,6 +54,7 @@ h3 {
 
 .label-field {
   display: inline-block;
+  width: 30%;
 }
 
 .update-range {
@@ -45,6 +72,8 @@ button:enabled {
   color: white;
   font-size: .8rem;
   text-transform: uppercase;
+  width: 80%;
+  border-radius: 25px;
 }
 
 button:disabled {
@@ -52,11 +81,19 @@ button:disabled {
   color: white;
   font-size: .8rem;
   text-transform: uppercase;
+  width: 80%;
+  border-radius: 25px;
 }
 
 .flexbuttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.guess-button {
+  width: 25%
+  border-radius: 25px;
+  margin: 2%;
 }
 
 .score {
@@ -69,34 +106,54 @@ button:disabled {
 
 main {
   display: flex;
+  justify-content: center;
 }
 
 section {
-  margin: 0;
+  margin-width: 2%;
+  width: 50%;
+}
+
+.section-one {
+  margin-top: 0%;
+  background-color: #F7F7F7;
+}
+
+.section-two {
+  padding: 2%;
+}
+
+.card {
+  height: 300px;
 }
 
 form {
-  border: solid black 1px;
+  /*border: solid black 1px;*/
   background-color: #fff;
+  padding: 1rem;
+  margin: 1rem;
+  border: solid #D0D2D3 2px;
 }
 
 article {
-  border: dotted black 1px;
+  /*border: dotted black 1px;*/
   background-color: #fff;
+  padding: 1rem 0rem 1rem 1rem;
+  margin: 1rem;
 }
-
-/*button.no-click {
-  pointer-events: none;
-}
-
-button.yes-click {
-  pointer-events: all;
-}*/
 
 .score {
-  border: solid black 1px;
   display: inline-block;
+  width: 40%;
+  padding: 1rem 0rem 1rem 0rem;
+  margin: 1rem;
   }
+
+.pink-guess {
+  color: #DD1972;
+  font-size: 3rem;
+  font-weight: 700;
+}
 
 ul {
   padding: 0;

@@ -6,92 +6,80 @@
   </head>
   <body>
    <header>
-     <h1>Number<span class="light">Guesser</span>
-     <h2>Ultimate Challenge Edition</h2>
+      <div id="header-text">
+        <h1>Number<span class="light">Guesser</span>
+        <h2>Ultimate Challenge Edition</h2>
+     </div>
    </header>
    <main>
-   
    <section class="section-one">
-     
      <form class="range">
        <h3>Set Range</h3>
         <div class="update-range">
-        <div class="label-field">          
-          <label for="js-set-min">Min Range</label><br>
-          <input type="number" id="js-set-min">
-        </div>
-        </div>
-          <div class="update-range">
-            <div class="label-field">
-          <label for="js-set-max">Max Range</label><br>
-          <input type="number" id="js-set-max">
-        </div>
+          <div class="label-field">
+            <label for="js-set-min">Min Range</label><br>
+            <input type="number" id="js-set-min">
+          </div>
         </div>
         <div class="update-range">
-          <button id="update-button">Update</button>
-          <p id="js-range-error"></p>
+          <div class="label-field">
+            <label for="js-set-max">Max Range</label><br>
+            <input type="number" id="js-set-max">
+          </div>
+        </div>
+        <div class="update-range">
+          <div class="label-field">
+            <button id="update-button">Update</button>
+            <p id="js-range-error"></p>
+          </div>
         </div>
      </form>
-     
      <form class="guess">
       <p class="display-range">-</p>
       <h3>Challenger 1</h3>
         <div class="label-field">
-          <label for="js-name-challenger-one">Name</label><br>
-        <input type="text" id="js-name-challenger-one" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
-      </div>
-      <div class="label-field">
-        <label for="js-guess-challenger-one">Guess</label><br>
-        <input type="number" id="js-guess-challenger-one">
+          <label for="js-name-challenger-one">Name</label>
+          <br>
+          <input type="text" id="js-name-challenger-one" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
+        </div>
+        <div class="label-field">
+          <label for="js-guess-challenger-one">Guess</label><br>
+          <input type="number" id="js-guess-challenger-one">
         </div>
         <p id="js-guess-error-one"></p>
-
       <h3>Challenger 2</h3>
       <div class="label-field">
         <label for="js-name-challenger-two">Name</label><br>
-        <input type="text" id="js-name-challenger-two">
+        <input type="text" id="js-name-challenger-two" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
       </div>
       <div class="label-field">
         <label for="js-guess-challenger-two">Guess</label><br>
         <input type="number" id="js-guess-challenger-two">
       </div>
-        <p id="js-guess-error-two"></p>
-      <div class="flexbuttons"><button id="submit-btn">Submit</button>
-      <button id="reset-btn" disabled>Reset Game</button>
-      <button id="clear-btn" disabled>Clear Game</button>
-    </div>
+      <p id="js-guess-error-two"></p>
+      <div class="flexbuttons">
+        <button class="guess-button"id="submit-btn">Submit</button>
+        <button class="guess-button"id="reset-btn" disabled>Reset Game</button>
+        <button class="guess-button"id="clear-btn" disabled>Clear Game</button>
+      </div>
      </form>
      <article class="latest-score">
        <h3>Latest Score</h3>
        <div class="score">
         <p id="js-name-update-one">Challenger 1 Name</p>
         <p>current guess</p>
-        <p id="js-guess-update-one">?</p>
+        <p class="pink-guess" id="js-guess-update-one">?</p>
         <p id="js-chal-one-feedback"></p>
        </div>
        <div class="score">
         <p id="js-name-update-two">Challenger 2 Name</p>
         <p>current guess</p>
-        <p id="js-guess-update-two">?</p>
+        <p class="pink-guess" id="js-guess-update-two">?</p>
         <p id="js-chal-two-feedback"></p>
        </div>
      </article>
    </section>
    <section class="section-two">
-     <article class="card">
-       <ul class="versus">
-          <li "chalOne">Challenger 1 Name</li>
-          <li>vs</li>
-          <li "chalTwo"</li>
-      </ul>
-      <div class="winner">Winner</div>
-      <ul class="stats">
-        <li>s</li>
-        <li>s</li>
-        <li>s</li>
-      </ul>
-     </article>
-     <article class="card"></article>
    </section>
  </main>
  <script type="text/javascript" src="main.js"></script>

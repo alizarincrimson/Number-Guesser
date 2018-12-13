@@ -229,18 +229,6 @@ function feedbackTwo() {
   }
 }
 
-function winnerOne() {
-  event.preventDefault();
-  var winnerContainer = document.querySelector(".section-two");
-  winnerContainer.insertAdjacentHTML('afterbegin', '<article class="card"><ul class="versus"><li "chalOne">Challenger 1 Name</li><li>vs</li><li "chalTwo"</li></ul><div class="winner">Winner</div><ul class="stats"><li>s</li><li>s</li><li>s</li></ul></article>')
-}
-
-function winnerTwo() {
-  event.preventDefault();
-  var winnerContainer = document.querySelector(".section-two");
-  winnerContainer.insertAdjacentHTML('afterbegin', '<article class="card"><ul class="versus"><li "chalOne">Challenger 1 Name</li><li>vs</li><li "chalTwo"</li></ul><div class="winner">Winner</div><ul class="stats"><li>s</li><li>s</li><li>s</li></ul></article>')
-}
-
 function guessErrorOne() {
   if (guessOne < min || guessOne > max) {
     document.querySelector("#js-guess-error-one").innerText = `${guessOne} is not within set range.`;
@@ -261,22 +249,14 @@ function rangeError() {
   }
 }
 
-// Generate winner card
-// // // innerHTML ???
+function winnerOne() {
+  event.preventDefault();
+  var winnerContainer = document.querySelector(".section-two");
+  winnerContainer.insertAdjacentHTML('afterbegin', '<article class="card"><ul class="versus"><li "chalOne">Challenger 1</li><li> vs. </li><li "chalTwo">Challenger 2</li></ul><div class="winner">Challenger 1 Wins!</div></article>')
+}
 
-
-// // function addCard() {
-// //   var card = <article class="card">
-// //        <ul class="versus">
-// //           <li>chalOne.value</li>
-// //           <li> vs </li>
-// //           <li>chalTwo.value</li>
-// //       </ul>
-// //       <div class="winner">Winner</div>
-// //       <ul class="stats">
-// //         <li>guesses</li>
-// //         <li>minutes</li>
-// //         <li>icon</li>
-// //       </ul>
-//      </article>
-// }
+function winnerTwo() {
+  event.preventDefault();
+  var winnerContainer = document.querySelector(".section-two");
+  winnerContainer.insertAdjacentHTML('afterbegin', '<article class="card"><ul class="versus"><li "chalOne">Challenger 1</li><li> vs. </li><li>Challenger 2</li></ul><div class="winner">Challenger 2 Wins!</div></article>')
+}
