@@ -15,7 +15,7 @@ Our greatest challenge was with disabling and enabling the buttons that update t
 
 We also suspect we did something kind of funky early on in the project that in some instances kept us from incorporating global variables into various functions. In some cases we can use them; in others, we've had to use query selectors instead, which makes for some ungangly code and perhaps introduced some of the challenges we faced with the button states. 
 
-We were happy to be able to generate the new card when a player guesses the correct number, but again struggled to pass in  variables that had been assigned elsewhere in our code. (The winner card will say which challenger won the game, but it doesn't say their name or score.) Next steps would be continuing developing the winner cards functionality and implementing animation.
+We were happy to be able to generate the new card when a player guesses the correct number, but again struggled to pass in  variables that had been assigned elsewhere in our code. (The winner card will say which challenger won the game, but it doesn't say their name or score.) Next steps would be continuing developing the winner cards functionality, implementing animation, and adding responsive styling (in retrospect, we should have had responsive styling in mind before we wrote our HTML).
 
 ## Take-Aways
 
